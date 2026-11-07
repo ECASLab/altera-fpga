@@ -72,17 +72,17 @@ Altera emails you the license file (`LR-xxxxxx_License.dat`), or you can downloa
 
 ### Linux
 
-1. Save the file in a path of your choice, for example:
+1. Save the file in a path of your choice, for example (supossing your Quartus installation is located in `$HOME/altera_lite`):
 
    ```
-   /home/your-user/tools-altera/license.dat
+   $HOME$/altera_lite/license.dat
    ```
 
 2. Set the environment variables:
 
    ```bash
-   export SALT_LICENSE_SERVER="$HOME/tools-altera/license.dat"
-   export PATH="$HOME/tools-altera/25.1std/questa_fse/bin:$PATH"
+   export SALT_LICENSE_SERVER="$HOME/altera_lite/license.dat"
+   export PATH="$HOME/altera_lite/25.1std/questa_fse/bin:$PATH"
    ```
 
    Add both lines to `~/.bashrc` to make them permanent. For a license server, use `export SALT_LICENSE_SERVER=<port>@<hostname>` instead.
@@ -90,7 +90,7 @@ Altera emails you the license file (`LR-xxxxxx_License.dat`), or you can downloa
 3. Verify:
 
    ```bash
-   "$HOME/tools-altera/25.1std/questa_fse/linux_x86_64/lmutil" lmhostid -flexid
+   "$HOME/altera_lite/25.1std/questa_fse/linux_x86_64/lmutil" lmhostid -flexid
    vsim -version
    vsim
    ```
@@ -102,22 +102,22 @@ If `vsim` still fails, check that the path is correct, the file is readable, and
 1. Save the file in a path without spaces, for example:
 
    ```
-   C:\altera\license.dat
+   C:\altera_lite\license.dat
    ```
 
 2. Set the environment variable:
    - Press Win, search for **Edit the system environment variables**, and click **Environment Variables...**.
    - Under **User variables**, click **New**:
      - Name: `SALT_LICENSE_SERVER`
-     - Value: `C:\altera\license.dat` (or `port@server` for a license server)
+     - Value: `C:\altera_lite\license.dat` (or `port@server` for a license server)
 
    Or from Command Prompt:
 
    ```bat
-   setx SALT_LICENSE_SERVER "C:\altera\license.dat"
+   setx SALT_LICENSE_SERVER "C:\altera_lite\license.dat"
    ```
 
-   Optionally add the Questa `win64` folder to `PATH`, e.g. `C:\altera\25.1std\questa_fse\win64`.
+   Optionally add the Questa `win64` folder to `PATH`, e.g. `C:\altera_lite\25.1std\questa_fse\win64`.
 
 3. Close and reopen your terminal (or Questa), since the variable only applies to new processes, then verify:
 
